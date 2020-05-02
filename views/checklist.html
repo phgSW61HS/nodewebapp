@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+
+<body>
+    Food of <%=data.name%> are:<br/>
+
+    <ul>
+        <% data.food.forEach((item)=>{%> 
+        <li><%=item%></li>
+        <%});%>
+    </ul>
+</body>
+
+</html>
