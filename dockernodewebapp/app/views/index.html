@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+  <body>
+
+  <h1>The dockerized version of button attribute</h1>
+
+  <form action="/testButton" method="get">
+  Choose your favorite subject:
+  <button name="subject" type="submit" value="fav_HTML">HTML</button>
+  <button name="subject" type="submit" value="fav_CSS">CSS</button>
+  </form>
+
+
+  <h2>Checkboxes</h2>
+  <p>The <strong>input type="checkbox"</strong> defines a checkbox:</p>
+
+  <!-- RADIO BUTTONS
+<form method="post" action="/testCheckBoxes">
+      <input type="checkbox" name="option[0]" value="1">
+      <input type="checkbox" name="option[1]" value="1">
+      <input type="checkbox" name="option[2]" value="1"><br>
+      <input type="text" name="text[0]"><br>
+      <input type="text" name="text[1]"><br>
+      <input type="text" name="text[2]"><br>
+      <button type="submit">Submit</button>
+  </form>
+-->
+        <form method="post" action="/testCheckBoxes">
+          <label>username : <input type="text" name="username"></label>
+          <br>
+          <label><input name="food" type="checkbox" value="dairy">Dairy</label>
+          <br>
+          <label><input name="food" type="checkbox" value="meat">Meat</label>
+          <br>
+          <label><input name="food" type="checkbox" value="fish">Fish</label>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+  </body>
+</html>

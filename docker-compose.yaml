@@ -1,0 +1,8 @@
+version: '3.6'
+services:
+  dockernodewebapp:
+    build: ./dockernodewebapp
+    image: dockernodewebapp
+    container_name: dockernodewebapp
+    ports:
+            - "3000:3000"
