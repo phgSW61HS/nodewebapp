@@ -1,0 +1,8 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: nodewebapp-ing
+spec:
+  backend:
+    serviceName: nodewebapp-svc
+    servicePort: 3000

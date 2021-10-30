@@ -1,0 +1,27 @@
+version: '3.6'
+services:
+  sequelizemysql:
+    build: ./sequelizemysql
+    image: sequelizemysql
+    container_name: sequelizemysql
+    ports:
+            - "3001:3001"
+    depends_on:
+      - mysql
+
+  mysql-development:
+    image: mysql:8.0.17
+    environment:
+      MYSQL_ROOT_PASSWORD: toto
+      MYSQL_DATABASE: testapp
+    ports:
+      - "3308:3306"
+mysql:
+  image: mysql:8.0.14
+  command: --default-authentication-plugin=mysql_native_password
+  environment:
+    - MYSQL_DATABASE=testapp
+    - MYSQL_ROOT_PASSWORD=toto
+    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+  ports:
+    - "3308:3306"

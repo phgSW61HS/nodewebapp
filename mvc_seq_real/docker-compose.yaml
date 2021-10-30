@@ -1,0 +1,24 @@
+version: '3.6'
+services:
+  testGeoloc:
+    build: ./testgeoloc
+    image: testgeoloc
+    container_name: testgeoloc
+    depends_on:
+      - mongo
+    ports:
+            - "1492:1492"
+    environment:
+      - MONGO_LBI_SERVICE_HOST=mongo
+
+
+  mongo:
+      image: 'mongo:latest'
+      command: --nojournal
+      ports:
+       - "27017:27017"
+      volumes:
+        - mongo-data:/data/db
+volumes:
+  mongo-data:
+    driver: local

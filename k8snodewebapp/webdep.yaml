@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nodewebapp-dep
+  name: nodewebapp-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nodewebapp-dep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: nodewebapp-dep
+    spec:
+      containers:
+      - image: pgolard/nodewebapp:v1
+        name: nodewebapp-dep
+        ports:
+        - containerPort: 3000
+        resources: {}
+status: {}
